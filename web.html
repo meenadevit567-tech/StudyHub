@@ -1,0 +1,230 @@
+<html>
+    <head>
+        <title>format</title>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <style>
+          body{
+            color: rgb(236, 241, 246);
+            font-size: 20px;
+            background:linear-gradient(45deg,darkorange,rgb(233, 106, 127));
+            margin-top: 50px;
+            margin-bottom: 20px; 
+          }
+            h1{
+               color: rgb(243, 240, 246);
+               font-size: 20px;
+               margin-top: 40px;
+               margin-bottom: 20px;
+
+            }
+            input[type="text"],
+            input[type="password"],
+            input[type="number"],
+            input[type="text"],
+            input[type="date"],
+            input[type="tel"],
+            input[type="button"],
+            select{
+              margin-bottom: 30px;
+              padding: 2px;
+              font-size: 14px;
+              width: 100px;
+              gap: 2px;
+              
+            }
+            .box{
+              width:420px;
+              height: 695px;
+              background-color: rgb(52, 4, 28);
+              margin:20px auto;
+              border-color: indigo;
+              border-radius: 10px;
+              text-align: center;
+              padding-top: 1px;
+              box-shadow:4px 4px 3px 2px rgb(238, 201, 226);
+            }
+            button{
+               width: 100px;
+               padding: 10px;
+               background-color: rgb(238, 182, 208);
+               color: rgb(49, 10, 50);
+               border-radius: 5px;
+               border:none;
+               font-size: 20px;
+               font-family: ariel;
+               margin-bottom:20px;
+            }
+            button:hover{
+              background: rgb(200, 97, 97);
+            }
+            h1 {
+              font-size: 25px;
+            }
+.row{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 8px 10px;
+}
+
+.row label{
+  width: 140px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.row input,
+.row select{
+  width: 150px;
+   padding: 4px; 
+}
+
+  
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+      <div class="box">
+        <h1>REGISTRATION</h1>
+        <form id="myForm">
+  <div>
+    <div class="row">
+    <label>name :</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    </div>
+<div class="row">
+    <label>password:</label>
+    <input type="password" id="password" placeholder="Enter your password">
+    </div>
+    <div class="row">
+    <label>age :</label>
+    <input type="number" id="age" placeholder="Enter your age">
+    </div>
+    <div class="row">
+    <label>courses :</label>
+    <select id="course">
+      <option disabled selected>select the course</option>
+      <option>python</option>
+      <option>c++</option>
+      <option>java</option>
+      <option>js</option>
+      <option>html</option>
+      <option>c</option>
+    </select>
+    </div>
+    <div class="row">
+    <label>instituition :</label>
+    <input type="text" id="inst" placeholder="Enter your Instituition">
+    </div>
+    <div class="row">
+    <label>qualification :</label>
+    <select id="qualification">
+      <option disabled selected>Select your Qualification</option>
+      <option>SSLC</option>
+      <option>HSLC</option>
+      <option>UG</option>
+      <option>PG</option>
+    </select>
+    </div>
+    <div class="row">
+    <label>date of registration :</label>
+    <input type="date" id="regdate">
+    </div>
+    <div class="row">
+    <label>phone :</label>
+    <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="Enter the phone number">
+    </div>
+    <div class="row">
+    <button type="submit">register</button>
+    <button type="reset">Reset</button>
+    </div>
+  </div>
+</form>
+
+        </div>
+          
+     <script>
+document.getElementById("myForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const age = document.getElementById("age").value.trim();
+  const course = document.getElementById("course").value;
+  const inst = document.getElementById("inst").value.trim();
+  const qualification = document.getElementById("qualification").value;
+  const regdate = document.getElementById("regdate").value;
+  const phone = document.getElementById("phone").value.trim();
+
+ 
+  if (name === "" || name.length < 3) {
+    Swal.fire("Error", "Name must be at least 3 characters", "error");
+    return;
+  }
+
+  
+  if (password === "" || password.length < 6) {
+    Swal.fire("Error", "Password must be at least 6 characters", "error");
+    return;
+  }
+
+
+  if (age === "" || age < 18 || age > 60) {
+    Swal.fire("Error", "Age must be between 18 and 60", "error");
+    return;
+  }
+
+
+  if (course === "select the course") {
+    Swal.fire("Error", "Please select a course", "error");
+    return;
+  }
+
+  if (inst === "") {
+    Swal.fire("Error", "Institution name cannot be empty", "error");
+    return;
+  }
+
+
+  if (qualification === "Select your Qualification") {
+    Swal.fire("Error", "Please select your qualification", "error");
+    return;
+  }
+
+  if (regdate === "") {
+    Swal.fire("Error", "Please select registration date", "error");
+    return;
+  }
+
+
+  if (!/^\d{10}$/.test(phone)) {
+    Swal.fire("Error", "Phone number must be 10 digits", "error");
+    return;
+  }
+
+  
+  let data = {
+    name,
+    password,
+    age,
+    course,
+    institution: inst,
+    qualification,
+    registrationDate: regdate,
+    phone
+  };
+
+  localStorage.setItem("registerData", JSON.stringify(data));
+
+  Swal.fire({
+    title: "Registered Successfully!",
+    text: "Redirecting to Login Page...",
+    icon: "success"
+  }).then(() => {
+    window.location.href = "login.html";
+  });
+});
+</script>
+
+    </body>
+    
+</html>

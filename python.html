@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Study Material | StudyHub</title>
+
+  <style>
+    body{
+      font-family: "Times New Roman", serif;
+      background:#f4f6fb;
+      padding:40px;
+      line-height:1.6;
+    }
+
+    h1{
+      text-align:center;
+      color:purple;
+      margin-bottom:30px;
+    }
+
+    h2{
+      color:#6a0572;
+      margin-top:30px;
+    }
+
+    p{
+      font-size:20px;
+      margin:10px 0;
+    }
+
+    ul{
+      margin-left:30px;
+      font-size:20px;
+    }
+
+    li{
+      margin:8px 0;
+    }
+
+    pre{
+      background:#1e1e1e;
+      color:#f8f8f2;
+      padding:15px;
+      border-radius:8px;
+      overflow-x:auto;
+      font-size:18px;
+    }
+
+    .back{
+      display:block;
+      margin-top:40px;
+      text-align:center;
+      font-size:20px;
+      text-decoration:none;
+      color:white;
+      background:purple;
+      padding:10px 20px;
+      width:200px;
+      margin-left:auto;
+      margin-right:auto;
+      border-radius:8px;
+    }
+
+    .back:hover{
+      background:#4a004e;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🐍 Python Study Material</h1>
+
+<h2>1. Introduction to Python</h2>
+<p>
+Python is a high-level, interpreted programming language that is easy to learn
+and simple to use. It is widely used in backend development, data science,
+automation, and web applications.
+</p>
+
+<p><b>Features of Python:</b></p>
+<ul>
+  <li>Simple and readable syntax</li>
+  <li>Platform independent</li>
+  <li>Large standard library</li>
+  <li>Supports object-oriented programming</li>
+</ul>
+
+---
+
+<h2>2. Variables and Data Types</h2>
+<p>
+Variables are used to store values. Python does not require data type declaration.
+</p>
+
+<pre>
+x = 10
+name = "Meena"
+price = 25.5
+isActive = True
+</pre>
+
+<p><b>Common Data Types:</b></p>
+<ul>
+  <li>int – whole numbers</li>
+  <li>float – decimal numbers</li>
+  <li>str – text</li>
+  <li>bool – True / False</li>
+</ul>
+
+---
+
+<h2>3. Conditional Statements</h2>
+<p>
+Conditional statements are used to execute code based on conditions.
+</p>
+
+<pre>
+num = 10
+
+if num > 0:
+    print("Positive number")
+else:
+    print("Negative number")
+</pre>
+
+---
+
+<h2>4. Loops (for and while)</h2>
+<p>
+Loops are used to repeat a block of code.
+</p>
+
+<p><b>For Loop:</b></p>
+<pre>
+for i in range(1, 6):
+    print(i)
+</pre>
+
+<p><b>While Loop:</b></p>
+<pre>
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+</pre>
+
+---
+
+<h2>5. Functions</h2>
+<p>
+Functions are reusable blocks of code.
+</p>
+
+<pre>
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)
+</pre>
+
+---
+
+<h2>6. Lists, Tuples, Sets, Dictionaries</h2>
+
+<p><b>List:</b></p>
+<pre>
+nums = [1, 2, 3, 4]
+</pre>
+
+<p><b>Tuple:</b></p>
+<pre>
+data = (10, 20)
+</pre>
+
+<p><b>Set:</b></p>
+<pre>
+s = {1, 2, 3}
+</pre>
+
+<p><b>Dictionary:</b></p>
+<pre>
+student = {
+  "name": "Meena",
+  "age": 20
+}
+</pre>
+
+---
+
+<h2>7. Object-Oriented Programming (OOP)</h2>
+<p>
+Python supports OOP concepts like class and object.
+</p>
+
+<pre>
+class Student:
+    def display(self):
+        print("Welcome Student")
+
+obj = Student()
+obj.display()
+</pre>
+
+---
+
+<h2>8. File Handling</h2>
+<p>
+File handling is used to store and read data from files.
+</p>
+
+<p><b>Write to a file:</b></p>
+<pre>
+file = open("data.txt", "w")
+file.write("Hello Python")
+file.close()
+</pre>
+
+<p><b>Read from a file:</b></p>
+<pre>
+file = open("data.txt", "r")
+print(file.read())
+file.close()
+</pre>
+
+---
+
+<a href="home.html" class="back">⬅ Back to home</a>
+
+</body>
+</html>

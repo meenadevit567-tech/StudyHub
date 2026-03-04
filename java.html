@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Study Material | StudyHub</title>
+
+  <style>
+    body{
+      font-family:"Times New Roman", serif;
+      background:#f4f6fb;
+      padding:40px;
+      line-height:1.6;
+    }
+    h1{text-align:center;color:#6a0572}
+    h2{color:#4a004e;margin-top:30px}
+    p, ul{font-size:20px}
+    li{margin:8px 0}
+    pre{
+      background:#1e1e1e;
+      color:#f8f8f2;
+      padding:15px;
+      border-radius:8px;
+      font-size:18px;
+      overflow-x:auto;
+    }
+    .back{
+      display:block;
+      text-align:center;
+      margin-top:40px;
+      background:#6a0572;
+      color:white;
+      padding:10px;
+      width:220px;
+      margin-left:auto;
+      margin-right:auto;
+      text-decoration:none;
+      border-radius:8px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>☕ Java Study Material</h1>
+
+<h2>1. Introduction to Java</h2>
+<p>
+Java is an object-oriented, platform-independent programming language widely used
+for backend systems, Android apps, and enterprise applications.
+</p>
+
+<ul>
+  <li>Write once, run anywhere</li>
+  <li>Secure and robust</li>
+  <li>Object-oriented</li>
+</ul>
+
+<h2>2. Variables and Data Types</h2>
+
+<pre>
+int a = 10;
+float price = 25.5f;
+char grade = 'A';
+boolean isValid = true;
+String name = "Meena";
+</pre>
+
+<h2>3. Conditional Statements</h2>
+
+<pre>
+int num = 10;
+
+if(num % 2 == 0){
+    System.out.println("Even");
+}else{
+    System.out.println("Odd");
+}
+</pre>
+
+<h2>4. Loops</h2>
+
+<pre>
+for(int i=1;i<=5;i++){
+    System.out.println(i);
+}
+</pre>
+
+<pre>
+int i=1;
+while(i<=5){
+    System.out.println(i);
+    i++;
+}
+</pre>
+
+<h2>5. Methods</h2>
+
+<pre>
+static int add(int a,int b){
+    return a+b;
+}
+
+public static void main(String[] args){
+    System.out.println(add(3,5));
+}
+</pre>
+
+<h2>6. OOP Concepts</h2>
+
+<pre>
+class Student{
+    void display(){
+        System.out.println("Hello Student");
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        Student s = new Student();
+        s.display();
+    }
+}
+</pre>
+
+<h2>7. Exception Handling</h2>
+
+<pre>
+try{
+    int x = 10/0;
+}
+catch(Exception e){
+    System.out.println("Error occurred");
+}
+</pre>
+
+<h2>8. Collections (ArrayList)</h2>
+
+<pre>
+import java.util.*;
+
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10);
+list.add(20);
+System.out.println(list);
+</pre>
+
+<a href="home.html" class="back">⬅ Back to home</a>
+
+</body>
+</html>

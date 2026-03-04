@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>
+            Login page
+        </title>
+        <style>
+            body{
+            color: beige;
+            background: linear-gradient(45deg,red,pink);
+            font-family: Ariel;
+            font-size: 20px;
+            }
+            .box{
+                width: 320px;
+                margin: 120px auto;
+                background-color: rgb(42, 4, 48);
+                border-radius: 10px;
+                padding: 30px;
+                height: 395px;
+                box-shadow: (2px 1px 2px 2px)palevioletred;
+               
+            }
+            h1{
+                text-align: center;
+                font-size: 30px;
+            }
+            input[type="text"],
+            input[type="password"]{
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 50px;
+                gap: 8px;
+                border-radius: 10px;
+            }
+            button{
+                width: 100%;
+                background-color:rgb(221, 120, 246);
+                color:bisque;
+                border-radius: 10px;
+                padding: 10px;
+                font-family: ariel;
+                font-size: 20px;
+            }
+            button:hover{
+                background-color: rgb(239, 157, 5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1>LOGIN PAGE</h1>
+            <form id="loginForm">
+                User Name:
+                <input type="text" id="loginName"><br>
+                Password:
+                <input type="password" id="loginPassword"><br>
+                <button>Login</button>
+            </form>
+            <a href="web.html" style="color:white">register</a>
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const loginName = document.getElementById("loginName").value.trim();
+  const loginPassword = document.getElementById("loginPassword").value.trim();
+
+  const storedData = JSON.parse(localStorage.getItem("registerData"));
+
+  if (!storedData) {
+    Swal.fire("Error", "No user registered. Please register first.", "error");
+    return;
+  }
+
+
+  if (
+    loginName === storedData.name &&
+    loginPassword === storedData.password
+  ) {
+    Swal.fire({
+      title: "Login Successful!",
+      icon: "success"
+    }).then(() => {
+      window.location.href = "home.html"; 
+    });
+  } else {
+    Swal.fire("Login Failed", "Invalid username or password", "error");
+  }
+});
+</script>
+
+    </body>
+</html>

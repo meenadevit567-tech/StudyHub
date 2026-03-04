@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyHub | Study Materials</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin: 0px;padding:0;box-sizing:border-box;font-family:'Times New Roman', Times, serif,sans-serif;font-size: 22px;}
+    body{background:#f4f6fb;color:#2e0326df;}
+
+
+    header{background:linear-gradient(45deg,rgb(215, 74, 215),lightblue);padding:15px 40px;position:sticky;top:0;z-index:1000}
+    nav{display:flex;justify-content:space-between;align-items:center}
+    .logo{color:rgb(244, 234, 241);font-size:28px;font-weight:600;text-shadow: 2px 2px 2px rgb(54, 3, 54);}
+    nav ul{list-style:none;display:flex;gap:25px}
+    nav ul li{cursor:pointer;color:#e5e7eb}
+    nav ul li:hover{color:#101b20}
+    .logout{background:#ef4444;padding:6px 14px;border-radius:6px;color:white}
+
+    section{display:none;padding:60px 80px;animation:fade 0.4s ease}
+    section.active{display:block}
+
+    @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    .title{text-align:center;font-size:32px;margin-bottom:30px;text-shadow: 2px 1px 1px rgb(173, 60, 173);color: rgb(121, 13, 121)}
+    .desc{text-align:center;max-width:750px;margin:auto;font-size:16px;color:#3d3b3b}
+
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;margin-top:40px}
+    .card{background:linear-gradient(45deg,purple,lightblue);padding:40px;border-radius:14px;box-shadow:0 10px 25px rgba(237, 234, 234, 0.867);transition:0.3s;margin: 20px;}
+    .card:hover{transform:translateY(-8px)}
+    .card h3{margin-bottom:10px;color:#bac4d5}
+
+
+    .btn{margin-top:15px;padding:8px 14px;border:none;background:#c050d3;color:white;border-radius:6px;cursor:pointer}
+
+
+    .contact-form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;margin-top:30px}
+    .contact-form input,.contact-form textarea{padding:10px;border-radius:8px;border:1px solid #ccc}
+   
+
+
+    footer{text-align:center;padding:20px;background:linear-gradient(45deg,rgb(158, 36, 134),lightblue);color:#e5e7eb}
+
+    @media(max-width:768px){section{padding:40px 20px}nav ul{flex-wrap:wrap;gap:15px}}
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo" style="text-shadow: 1px 1px 1px violet;">StudyHub</div>
+    <ul>
+      <li onclick="showSection('home')">Home</li>
+      <li onclick="showSection('about')">About</li>
+      <li onclick="showSection('subjects')">Subjects</li>
+      <li onclick="showSection('materials')">Study Materials</li>
+      <li onclick="showSection('contact')">Contact</li>
+      <li class="logout" onclick="logout()">Logout</li>
+    </ul>
+  </nav>
+</header>
+
+
+<section id="home" class="active">
+  <h2 class="title" style="text-shadow: 2px 2px 2px violet;">Welcome to StudyHub</h2>
+<p>
+StudyHub is a smart and organized learning platform designed especially for
+Computer Science students. Our goal is to make learning simple, structured,
+and accessible by providing high-quality study materials in one place.
+</p><br>
+<p>
+  📘 Easy-to-understand explanations
+  📚 Subject-wise organized materials
+  🧠 Helpful for exams and interviews
+  ⏱ Saves time by avoiding scattered resources
+</p>
+
+  <div class="grid" style="margin-top: 63px;">
+    <div class="card"><h3>Easy Learning</h3><p>Concepts explained in a simple and understandable way.</p></div>
+    <div class="card"><h3>Organized Content</h3><p>Subject-wise and topic-wise materials.</p></div>
+    <div class="card"><h3>Student Friendly</h3><p>Designed keeping learners in mind.</p></div>
+  </div>
+</section>
+
+
+<section id="about">
+  <h2 class="title" style="margin-top: 72px;">About Us</h2>
+<ul>
+<li>StudyHub was created with the vision of helping students overcome the
+difficulty of finding reliable and organized study materials. Many students
+struggle because learning resources are scattered across multiple platforms.</li><br>
+
+
+<li>
+ This website brings together important subjects like Python, Java, and Data
+Structures, providing well-structured notes and resources that focus on
+concept clarity and practical understanding.
+</li><br>
+
+<li>
+StudyHub is built by a student, for students, with the aim of supporting
+academic learning and career preparation.
+</li><br>
+<li>
+This platform is mainly intended for:
+Engineering students,Computer science students,Beginners in programming,Students preparing for placements and technical interviews.
+</li><br>
+
+  <li>StudyHub is built to help students access high-quality study resources such as notes, explanations, and practice materials at one place.</li><br>
+  </ul>
+</section>
+
+
+ 
+
+<section id="subjects">
+  <h2 class="title" style="margin-top: 50px;">Subjects</h2>
+  <div class="grid">
+    
+<div class="card" id="python-card">
+  <h3>Python</h3>
+
+
+  <div class="desc-content">
+    <p>
+      Python is a powerful and beginner-friendly programming language widely used
+      in software development, data science,and web development.
+    </p>
+  </div>
+
+
+  <div class="topics-content" style="display:none;">
+    <ul>
+      <li>Basics and syntax</li>
+      <li>Conditional statements and loops</li>
+      <li>Functions and modules</li>
+      <li>Object-Oriented Programming</li>
+    </ul>
+  </div>
+
+  <button class="btn" onclick="toggleTopics('python')">View Topics</button>
+</div>
+
+    <div class="card" id="java-card">
+  <h3>Java</h3>
+
+  <div class="desc-content">
+    <p>
+      Java is an object-oriented programming language commonly used in enterprise
+      applications, Android development, and backend systems.
+    </p>
+  </div>
+
+  <div class="topics-content" style="display:none;">
+    <ul>
+      <li>OOP concepts</li>
+      <li>Arrays and Strings</li>
+      <li>Collections Framework</li>
+      <li>Exception Handling</li>
+    </ul>
+  </div>
+
+  <button class="btn" onclick="toggleTopics('java')">View Topics</button>
+</div>
+
+   <div class="card" id="ds-card">
+  <h3>Data Structures</h3>
+
+  <div class="desc-content">
+    <p>
+      Data Structures help in organizing and managing data efficiently and are
+      essential for problem-solving and interviews.
+    </p>
+    <br>
+  </div>
+
+  <div class="topics-content" style="display:none;">
+    <ul>
+      <li>Arrays and Linked Lists</li>
+      <li>Stacks and Queues</li>
+      <li>Trees and Graphs</li>
+      <li>Time and Space Complexity</li>
+    </ul>
+  </div>
+
+  <button class="btn" onclick="toggleTopics('ds')">View Topics</button>
+</div>
+
+</section>
+
+
+<section id="materials">
+  <h2 class="title" style="margin-top: 30px;">Study Materials</h2>
+ <div class="grid">
+  <div class="card" onclick="openChooser('pdf')">
+    <h3>PDF Notes</h3>
+    <p>Download topic-wise notes.</p>
+  </div>
+
+  <div class="card" onclick="openChooser('qb')">
+    <h3>Question Banks</h3>
+    <p>Practice important questions.</p>
+  </div>
+
+ 
+</div>
+
+<p>
+This section provides students with downloadable and easy-to-access study
+resources that help in effective learning and quick revision.
+</p><br>
+
+<ul>
+  <li><b>PDF Notes:</b> Well-structured notes for each topic.</li><br>
+  <li><b>Question Banks:</b> Important questions for exams.</li><br>
+ 
+</ul>
+
+</section>
+
+
+<section id="contact">
+  <h2 class="title" style="margin-top: 54px;">Contact Us</h2>
+  <form class="contact-form" id="contactForm">
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <textarea rows="4" placeholder="Your Message" required></textarea>
+  <button class="btn" type="submit">Send</button>
+</form>
+
+</section>
+
+<footer style="margin-top:122px;">© 2025 StudyHub | Learn Smarter</footer>
+
+<script>
+  function showSection(id){
+    document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+  function logout() {
+    window.location.href = "login.html"
+  }
+</script>
+<script>
+  function openTopics(subject){
+    if(subject === 'python'){
+      window.location.href = "python.html";
+    }
+    else if(subject === 'java'){
+      window.location.href = "java.html";
+    }
+    else if(subject === 'ds'){
+      window.location.href = "ds.html";
+    }
+  }
+</script>
+
+<script>
+  function openChooser(type) {
+    const subject = prompt("Choose subject: python / java / ds");
+    if (!subject) return;
+
+    const s = subject.toLowerCase().trim();
+    let url = "";
+
+    if (type === "qb") {
+      url = `../question bank/${s}_qb.html`;
+    }
+   
+    else if (type === "pdf") {
+      url = `../${s}.html`;
+    }
+
+    window.location.href = url;
+  }
+</script>
+
+<script>
+  function toggleTopics(subject) {
+    const card = document.getElementById(subject + "-card");
+
+    const desc = card.querySelector(".desc-content");
+    const topics = card.querySelector(".topics-content");
+    const btn = card.querySelector(".btn");
+
+    if (topics.style.display === "none") {
+      desc.style.display = "none";
+      topics.style.display = "block";
+      btn.innerText = "Hide Topics";
+    } else {
+      desc.style.display = "block";
+      topics.style.display = "none";
+      btn.innerText = "View Topics";
+    }
+  }
+</script>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); 
+
+    Swal.fire({
+      title: "Thank You 💜",
+      text: "Your message has been sent successfully!",
+      icon: "success",
+      confirmButtonText: "Okay 😊",
+      background: "#fdf2ff",
+      color: "#4a044e",
+      confirmButtonColor: "#c050d3"
+    });
+
+
+    this.reset();
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

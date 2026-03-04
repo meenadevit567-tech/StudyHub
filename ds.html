@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Structures | StudyHub</title>
+
+  <style>
+    body{
+      font-family: "Times New Roman", serif;
+      background:#f4f6fb;
+      padding:40px;
+      line-height:1.6;
+    }
+
+    h1{
+      text-align:center;
+      color:#6a0572;
+      margin-bottom:40px;
+    }
+
+    h2{
+      color:#4a004e;
+      margin-bottom:15px;
+    }
+
+    p{
+      font-size:20px;
+    }
+
+    pre{
+      background:#1e1e1e;
+      color:#f8f8f2;
+      padding:15px;
+      border-radius:8px;
+      font-size:18px;
+      overflow-x:auto;
+    }
+
+    .topic-box{
+      background:#ffffff;
+      padding:25px;
+      margin:30px auto;
+      max-width:1400px;
+      border-radius:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .back{
+      display:block;
+      text-align:center;
+      margin-top:40px;
+      background:#6a0572;
+      color:white;
+      padding:12px;
+      width:220px;
+      margin-left:auto;
+      margin-right:auto;
+      text-decoration:none;
+      border-radius:8px;
+      font-size:18px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>📘 Data Structures Study Material</h1>
+
+<div class="topic-box">
+  <h2>1. Introduction</h2>
+  <p>
+    Data Structures are ways of organizing and storing data efficiently
+    so that operations like searching, insertion, deletion, and sorting
+    can be performed easily.
+  </p>
+</div>
+
+
+<div class="topic-box">
+  <h2>2. Arrays</h2>
+  <p>
+    An array stores elements of the same type in a continuous memory location.
+  </p>
+  <pre>
+int arr[] = {1,2,3,4};
+for(int i=0;i<arr.length;i++){
+    System.out.println(arr[i]);
+}
+  </pre>
+</div>
+
+
+<div class="topic-box">
+  <h2>3. Stack</h2>
+  <p>
+    Stack follows LIFO (Last In First Out). Operations: push, pop.
+  </p>
+  <pre>
+import java.util.Stack;
+
+Stack<Integer> s = new Stack<>();
+s.push(10);
+s.push(20);
+System.out.println(s.pop());
+  </pre>
+</div>
+
+<div class="topic-box">
+  <h2>4. Queue</h2>
+  <p>
+    Queue follows FIFO (First In First Out).
+  </p>
+  <pre>
+import java.util.Queue;
+import java.util.LinkedList;
+
+Queue<Integer> q = new LinkedList<>();
+q.add(10);
+q.add(20);
+System.out.println(q.poll());
+  </pre>
+</div>
+
+
+<div class="topic-box">
+  <h2>5. Linked List</h2>
+  <p>
+    A Linked List stores data using nodes where each node points to the next node.
+  </p>
+  <pre>
+import java.util.LinkedList;
+
+LinkedList<Integer> list = new LinkedList<>();
+list.add(10);
+list.add(20);
+System.out.println(list);
+  </pre>
+</div>
+
+<a href="home.html" class="back">⬅ Back to home</a>
+
+</body>
+</html>

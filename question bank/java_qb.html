@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Question Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Times New Roman', Times, serif;
+    }
+
+    body{
+      min-height:100vh;
+      background: linear-gradient(135deg, #f774d2, #7474fa);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .container{
+      width:80%;
+      max-width:900px;
+      background:#fac8e8;
+      padding:40px;
+      border-radius:15px;
+      box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    h1{
+      text-align:center;
+      color:#b23b00;
+      margin-bottom:25px;
+      font-size:32px;
+    }
+
+    
+
+    ol{
+      list-style:none;
+      counter-reset:question;
+    }
+    
+    li{
+      counter-increment:question;
+      background:#ede6eb;
+      margin:12px 0;
+      padding:15px 20px 15px 55px;
+      border-left:6px solid #9475fa;
+      border-radius:8px;
+      font-size:20px;
+      color:#333;
+      position:relative;
+      transition:0.3s;
+    }
+    li::before{
+      
+      content: counter(question);
+      position:absolute;
+      left:15px;
+      top:50%;
+      transform:translateY(-50%);
+      background:#3498db;
+      color:#fff;
+      width:28px;
+      height:28px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    li:hover{
+      background:#f495d4;
+      transform:translateX(5px);
+    }
+
+    footer{
+      text-align:center;
+      margin-top:30px;
+      font-size:14px;
+      color:#777;
+    }
+
+    @media(max-width:600px){
+      .container{
+        width:95%;
+        padding:25px;
+      }
+
+      h1{
+        font-size:24px;
+      }
+
+      li{
+        font-size:16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>☕ Java – Question Bank</h1>
+
+    <ol>
+      <li> What is Java? Explain its features.</li>
+      <li> Explain JVM, JRE, and JDK.</li>
+      <li> What are OOP principles?</li>
+      <li> Difference between abstract class and interface.</li>
+      <li> Explain inheritance with example.</li>
+      <li> What is method overloading and overriding?</li>
+      <li> Difference between Array and ArrayList.</li>
+      <li> Explain exception handling in Java.</li>
+    </ol>
+
+    <footer>
+      © 2025 StudyHub | Java Question Bank
+    </footer>
+  </div>
+
+</body>
+</html>
